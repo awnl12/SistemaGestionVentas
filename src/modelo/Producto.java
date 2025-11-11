@@ -10,14 +10,11 @@ package modelo;
 */
 
 public class Producto {
+    private int codigo;
+    private String nombre;
+    private double precioUnitario;
+    private int cantidadComprada;
 
-    // (atributos del producto)
-    public int codigo;
-    public String nombre;
-    public double precioUnitario;
-    public int cantidadComprada;
-
-    // Constructor 
     public Producto(int codigo, String nombre, double precioUnitario, int cantidadComprada) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -25,14 +22,23 @@ public class Producto {
         this.cantidadComprada = cantidadComprada;
     }
 
-    // calcular el importe del prodducto
+    public int getCodigo() { return codigo; }
+    public String getNombre() { return nombre; }
+    public double getPrecioUnitario() { return precioUnitario; }
+    public int getCantidadComprada() { return cantidadComprada; }
+
+    public void setCantidadComprada(int cantidadComprada) {
+        this.cantidadComprada = cantidadComprada;
+    }
+
+    // Calcula el importe total del producto
     public double getImporte() {
         return precioUnitario * cantidadComprada;
     }
 
-    // info del prodcuto
-    public void mostrar() {
-        System.out.printf("%-10d %-15s %-10.2f %-10d %-10.2f\n",
-                codigo, nombre, precioUnitario, cantidadComprada, getImporte());
+    @Override
+    public String toString() {
+        return "Código: " + codigo + ", Nombre: " + nombre + ", Precio: S/." + precioUnitario +
+               ", Cantidad: " + cantidadComprada + ", Importe: S/." + getImporte();
     }
 }

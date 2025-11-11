@@ -1,13 +1,21 @@
-
 package producto;
 
 import java.util.Scanner;
+import vista.MenuPrincipal;
 
 public class MainApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        MenuPrincipal menuProductos = new MenuPrincipal();
+
         boolean salir = false;
-        String[] integrantes = {"Luis Gabriel Reyes Saravia", "Jorge Martin Marroquin Rodriguez ", "Jesus David Rojas Levano","Frank Matheus Morales Bermudez Lopez","Ednilson Jesus Pinto Valentin",};
+        String[] integrantes = {
+            "Luis Gabriel Reyes Saravia", 
+            "Jorge Martin Marroquin Rodriguez", 
+            "Jesus David Rojas Levano",
+            "Frank Matheus Morales Bermudez Lopez",
+            "Ednilson Jesus Pinto Valentin"
+        };
 
         while (!salir) {
             System.out.println("-------------------------------------");
@@ -29,27 +37,16 @@ public class MainApp {
             int opcion = sc.nextInt();
             
             switch (opcion) {
-                case 1:
-                    System.out.println("Elegiste... Arreglo de objetos");
-                    break;
-                case 2:
-                    System.out.println("Elegiste... Lista enlazada");
-                    break;
-                case 3:
-                    System.out.println("Elegiste... Pilas");
-                    break;
-                case 4:
-                    System.out.println("Elegiste... Colas");
-                    break;
-                case 5:
-                    System.out.println("Elegiste... Arboles");
-                    break;
-                case 6:
+                case 1 -> menuProductos.mostrarMenu();
+                case 2 -> System.out.println("Elegiste... Lista enlazada");
+                case 3 -> System.out.println("Elegiste... Pilas");
+                case 4 -> System.out.println("Elegiste... Colas");
+                case 5 -> System.out.println("Elegiste... Arboles");
+                case 6 -> {
                     salir = true;
                     System.out.println("SALIENDO DEL MENU...");
-                    break;
-                default:
-                    System.out.println("Opción incorrecta, intentalo de nuevo por favor.");
+                }
+                default -> System.out.println("Opción incorrecta, intentalo de nuevo por favor.");
             }
             System.out.println();
         }
