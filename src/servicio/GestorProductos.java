@@ -81,14 +81,14 @@ public class GestorProductos {
                 System.out.print("Ingrese nueva cantidad comprada: ");
                 int nuevaCantidad = sc.nextInt();
                 productos[i].setCantidadComprada(nuevaCantidad);
-                System.out.println("🔁 Cantidad actualizada correctamente.");
+                System.out.println("===> Cantidad actualizada correctamente.");
                 encontrado = true;
                 break;
             }
         }
 
         if (!encontrado) {
-            System.out.println("❌ Producto no encontrado.");
+            System.out.println(" X Producto no encontrado.");
         }
     }
 
@@ -98,7 +98,7 @@ public class GestorProductos {
         for (int i = 0; i < contador; i++) {
             total += productos[i].getImporte();
         }
-        System.out.println("💰 Total de ventas: S/." + total);
+        System.out.println(" ==> Total de ventas: S/." + total);
     }
 
     // Submenú de productos
