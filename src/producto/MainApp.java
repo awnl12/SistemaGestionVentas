@@ -2,16 +2,17 @@ package producto;
 
 import java.util.Scanner;
 import vista.MenuPrincipal;
-import servicio.GestorAlmacenLifo; 
+import servicio.GestorAlmacenLifo;
+import servicio.GestorCombos;
 
 public class MainApp {
     public static void main(String[] args) {
      
         Scanner sc = new Scanner(System.in); 
-        
        
         MenuPrincipal menuVista = new MenuPrincipal();
         GestorAlmacenLifo gestorPilas = new GestorAlmacenLifo("SKU-PRO-001");
+        GestorCombos listaEnlazada = new GestorCombos();
 
         boolean salir = false;
         String[] integrantes = {
@@ -32,7 +33,7 @@ public class MainApp {
             }
             System.out.println("\nMenu principal:");
             System.out.println("1. Arreglo de objetos (CRUD Productos)");
-            System.out.println("2. Lista enlazada");
+            System.out.println("2. Lista enlazada (Combos)");
             System.out.println("3. Pilas (Almacén LIFO)"); 
             System.out.println("4. Colas");
             System.out.println("5. Arboles");
@@ -54,9 +55,8 @@ public class MainApp {
                 
                 case 1 -> menuVista.mostrarMenu(sc); 
                 
-                case 2 -> System.out.println("Elegiste... Lista enlazada (por implementar)");
+                case 2 -> listaEnlazada.menuCombos(sc);
                 
-           
                 case 3 -> gestorPilas.menuPilas(sc);
                 
                 case 4 -> System.out.println("Elegiste... Colas (por implementar)");
