@@ -34,7 +34,7 @@ public class MainApp {
             System.out.println("\nMenu principal:");
             System.out.println("1. Arreglo de objetos (CRUD Productos)");
             System.out.println("2. Lista enlazada (Combos)");
-            System.out.println("3. Pilas (Almacén LIFO)"); 
+            System.out.println("3. Pilas (Almacen LIFO)"); 
             System.out.println("4. Colas");
             System.out.println("5. Arboles");
             System.out.println("6. Salir");

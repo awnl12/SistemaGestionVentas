@@ -18,23 +18,23 @@ public class GestorAlmacenLifo {
     }
 
     /* -----------------------------------------------------------------
-    // --- EL SUB-MENÚ DE PILAS ---
+    // --- EL SUB-MENU DE PILAS ---
      -----------------------------------------------------------------*/
     public void menuPilas(Scanner sc) {
         boolean regresar = false;
         while (!regresar) {
-            System.out.println("\n--- MENU DE GESTIIN DE ALMACEN (LIFO) ---");
+            System.out.println("\n--- MENU DE GESTION DE ALMACEN (LIFO) ---");
             System.out.println("Gestionando: Estante de " + this.productoAlmacenado);
-            System.out.println("1. Recibir Mercadería (Push)");
-            System.out.println("2. Despachar Mercadería a Tienda (Pop)");
+            System.out.println("1. Recibir Mercaderia (Push)");
+            System.out.println("2. Despachar Mercaderia a Tienda (Pop)");
             System.out.println("3. Ver Tope del Estante (Peek)");
             System.out.println("4. Ver Estante Completo");
-            System.out.println("5. Regresar al Menú Principal");
+            System.out.println("5. Regresar al Menu Principal");
             System.out.print("Seleccione una opción: ");
             
      
             while (!sc.hasNextInt()) {
-                System.out.println("Error: Ingrese un número.");
+                System.out.println("Error: Ingrese un numero.");
                 sc.next(); 
             }
             int opcion = sc.nextInt();
@@ -46,7 +46,7 @@ public class GestorAlmacenLifo {
                 case 3 -> verTope();
                 case 4 -> verEstadoEstante();
                 case 5 -> regresar = true;
-                default -> System.out.println("Opción inválida, intente nuevamente.");
+                default -> System.out.println("Opcion invalida, intente nuevamente.");
             }
         }
     }
@@ -59,7 +59,7 @@ public class GestorAlmacenLifo {
         System.out.print("Ingrese cantidad recibida: ");
         int cantidad = sc.nextInt();
         sc.nextLine(); 
-        System.out.print("Ingrese fecha de recepción (ej: 11-Nov-2025): ");
+        System.out.print("Ingrese fecha de recepcion (ej: 11-Nov-2025): ");
         String fecha = sc.nextLine();
 
         Lote loteNuevo = new Lote(this.productoAlmacenado, nombre, cantidad, fecha);
