@@ -4,6 +4,7 @@ import java.util.Scanner;
 import vista.MenuPrincipal;
 import servicio.GestorAlmacenLifo;
 import servicio.GestorCombos;
+import servicio.GestorPedidosCola;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class MainApp {
         MenuPrincipal menuVista = new MenuPrincipal();
         GestorAlmacenLifo gestorPilas = new GestorAlmacenLifo("SKU-PRO-001");
         GestorCombos listaEnlazada = new GestorCombos();
+        GestorPedidosCola cola = new GestorPedidosCola();
 
         boolean salir = false;
         String[] integrantes = {
@@ -35,7 +37,7 @@ public class MainApp {
             System.out.println("1. Arreglo de objetos (CRUD Productos)");
             System.out.println("2. Lista enlazada (Combos)");
             System.out.println("3. Pilas (Almacen LIFO)"); 
-            System.out.println("4. Colas");
+            System.out.println("4. Colas (Ventas mediante Pedidos)");
             System.out.println("5. Arboles");
             System.out.println("6. Salir");
             System.out.print("Seleccione una opcion: ");
@@ -59,7 +61,8 @@ public class MainApp {
                 
                 case 3 -> gestorPilas.menuPilas(sc);
                 
-                case 4 -> System.out.println("Elegiste... Colas (por implementar)");
+                case 4 -> cola.menuPedidos(sc);
+                
                 case 5 -> System.out.println("Elegiste... Arboles (por implementar)");
                 case 6 -> {
                     salir = true;
