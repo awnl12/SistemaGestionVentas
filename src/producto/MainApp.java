@@ -5,6 +5,7 @@ import vista.MenuPrincipal;
 import servicio.GestorAlmacenLifo;
 import servicio.GestorCombos;
 import servicio.GestorPedidosCola;
+import servicio.GestorProductos;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class MainApp {
         GestorAlmacenLifo gestorPilas = new GestorAlmacenLifo("SKU-PRO-001");
         GestorCombos listaEnlazada = new GestorCombos();
         GestorPedidosCola cola = new GestorPedidosCola();
+          GestorProductos gestor = new GestorProductos(50); 
 
         boolean salir = false;
         String[] integrantes = {
@@ -55,7 +57,7 @@ public class MainApp {
 
             switch (opcion) {
                 
-                case 1 -> menuVista.mostrarMenu(sc); 
+                case 1 -> gestor.menuProductos(sc); 
                 
                 case 2 -> listaEnlazada.menuCombos(sc);
                 
