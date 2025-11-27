@@ -60,13 +60,13 @@ public class GestorProductos {
                 productos[contador - 1] = null;
                 contador--;
                 encontrado = true;
-                System.out.println("🗑️ Producto eliminado correctamente.");
+                System.out.println(" Producto eliminado correctamente.");
                 break;
             }
         }
 
         if (!encontrado) {
-            System.out.println("❌ Producto no encontrado.");
+            System.out.println(" Producto no encontrado.");
         }
     }
 

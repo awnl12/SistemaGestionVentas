@@ -1,7 +1,7 @@
 package producto;
 
 import java.util.Scanner;
-import vista.MenuPrincipal;
+
 import servicio.GestorAlmacenLifo;
 import servicio.GestorCombos;
 import servicio.GestorPedidosCola;
@@ -12,7 +12,7 @@ public class MainApp {
      
         Scanner sc = new Scanner(System.in); 
        
-        MenuPrincipal menuVista = new MenuPrincipal();
+        
         GestorAlmacenLifo gestorPilas = new GestorAlmacenLifo("SKU-PRO-001");
         GestorCombos listaEnlazada = new GestorCombos();
         GestorPedidosCola cola = new GestorPedidosCola();
